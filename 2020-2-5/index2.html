@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+  form{margin-left:380px;margin-top:50px;}
+  .btn{width:110px;}
+  .btn:nth-child(1){margin-left:80px;margin-right:10px;}
+  .invalid-feedback{width:300px;padding-left:15px;}
+  </style>
+  <body>
+      <form>
+          <div class="form-group  form-inline ">
+                <label for="dingdanNo">订单编号：</label>
+                  <input type="text" class="form-control is-invalid ml-2" id="dingdanNo"  required>
+                 <small class="invalid-feedback">编号不能为空，请重新输入</small>
+          </div>
+          <div class="form-group form-inline">
+            <label for="dingdanNo">商品名称：</label>
+              <input type="text" class="form-control is-invalid ml-2" id="dingdanNo"  required>
+             <div class="invalid-feedback">商品名称不能为空，请重新输入</div>
+      </div>
+      <div class="form-group form-inline">
+        <label for="dingdanNo">商品单位：</label>
+          <input type="text" class="form-control is-invalid ml-2" id="dingdanNo"  required>
+         <div class="invalid-feedback"> 单位不能为空，请重新输入</div>
+     </div>
+     <div class="form-group form-inline">
+        <label for="dingdannum">商品数量：</label>
+          <input type="text" class="form-control is-invalid ml-2" id="dingdannum"  required>
+         <div class="invalid-feedback"> 请输入大于0的正自然数,小数点后保留两位</div>
+     </div>
+     <div class="form-group form-inline">
+        <label for="dingdanprice">&nbsp;&nbsp;&nbsp;总金额：</label>
+          <input type="text" class="form-control is-invalid ml-2" id="dingdanprice"  required>
+         <div class="invalid-feedback"> 请输入大于0的正自然数,小数点后保留两位</div>
+     </div>
+     <div class="form-group form-inline">
+        <label for="dingdanshang">&nbsp;&nbsp;&nbsp;供应商：</label>
+        <select class="form-control ml-2" id="dingdanshang">
+            <option>--请选择--</option>
+          </select>
+     </div>
+     <div class="form-group">
+       <label for="">是否付款：</label>
+       <input type="radio" name="is" checked >未付款
+       <input type="radio" name="is" class="ml-3">已付款
+     </div>
+ 
+     <div class="form-group justify-content-between">
+     <button class="btn btn-primary" type="submit">保存</button>
+     <button class="btn btn-primary" type="submit">返回</button>
+    </div>
+      </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

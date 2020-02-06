@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1573671_x7cu3rt5yq.css">
+  </head>
+  <style>
+   form{width:1200px;margin: 0 auto;}
+   .form-row{width:100%;}
+   .tablegood thead{background-color: aliceblue;height:50px;line-height:50px;text-align: center;}
+   .tablegood tbody td{border:1px solid #ccc;height:50px;line-height:50px;text-align: center;}
+   .tianjia{margin-left:290px;}
+   .tablegood tbody tr td:last-child a{display:inline-block;width:30px;height:30px;line-height:30px;text-align: center;} 
+  </style>
+  <body>
+      <form class="form-inline">
+          <div class="form-row">
+            <div class="form-group col-auto ml-25">
+                <label for="inputname">商品名称：</label><input type="email" class="form-control" id="inputname">
+            </div>
+            <div class="form-group col-auto">
+              <label for="inputgys">供应商：</label>
+              <select class="form-control" id="inputgys">
+                <option>--请选择--</option>
+                <option>北京</option>
+              </select>
+            </div>
+            <div class="form-group col-auto">
+                <label for="inputis">是否付款：</label>
+                <select class="form-control" id="inputis">
+                  <option>--请选择--</option>
+                  <option>是</option>
+                  <option>否</option>
+                </select>
+              </div>
+            <div class="form-group col-auto">
+                <button type="button" class="btn btn-success"><i class="iconfont icon-fangdajing mr-1"></i>查询</button>
+            </div>
+            <div class="form-group col-auto tianjia">
+                <a href="./index2.html"><button type="button" class="btn btn-primary"><i class="iconfont icon-addTodo-nav"></i>添加订单</button></a>
+            </div>
+        </div>  
+    </form>
+    <div class="container-fluid mt-1 tablegood">
+     <table class="w-100">
+      <thead>
+        <tr>
+          <th>订单编号</th>
+          <th>商品名称</th>
+          <th>供应商</th>
+          <th>订单金额</th>
+          <th>是否付款</th>
+          <th>创建时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+        <td>BBLLLl-1</td>
+        <td>洗发水，护发素</td>
+        <td>北京三木堂商贸有限公司</td>
+        <td>50000.00</td>
+        <td>是</td>
+        <td>2012-12-12</td>
+        <td><a href="" class="bg-info text-white"><i class="iconfont icon-xinxi"></i></a>
+          <a href="" class="bg-info text-white"><i class="iconfont icon-biji"></i></a>
+          <a href="" class="bg-info text-white"><i class="iconfont icon-x"></i></a>
+        </td>
+      </tr>
+      </tbody>
+     </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
