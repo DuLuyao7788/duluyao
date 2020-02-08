@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1574177_gbf6ottvpcj.css">
+  </head>
+  <body>
+      <style>
+    .card{height:700px;}
+    .card-img-overlay {
+    top:40px !important;
+    left:650px !important;
+  }
+  i.iconfont.iconzhifubao{color: #007bff;}
+  i.iconfont.icontaobao{color: #ff6a00;}
+  i.iconfont.iconweibo-copy{color: red;}
+  i.iconfont.icondingding{color: #007bff;}
+  
+  i.iconfont{font-size:20px; margin:0 5px;}
+  .card-body .tab-content .tab-pane p{
+      font-size: 14px;
+      color: #999;
+  }
+  .card-body .tab-content .tab-pane p:nth-child(1){
+      margin-top: 70px;
+  }
+  .card-body .tab-content #tab-pane-1 a{
+   margin-top:70px;
+   margin-bottom: 10px;
+  }
+  .dropdown-divider{margin:0;}
+  .card-body .tab-content #tab-pane-1 div span{
+      display: inline-block;
+      height:40px;
+      line-height:40px;
+      text-align: center;
+    }
+  .card-body .tab-content #tab-pane-2 .body{
+   margin-top:80px !important;
+ 
+  }
+  .card-body .tab-content #tab-pane-2 .body div:nth-child(1){
+   margin-bottom:30px !important;
+ 
+  }
+  .card-body .tab-content #tab-pane-2 .body button{
+      background-color:#ff6a00;
+  }
+
+  .card-body .tab-content #tab-pane-1 div span,.card-body .tab-content #tab-pane-2 .body a{
+    font-size:14px; color:#999;
+  }
+  
+      </style>
+    <div class="card mb-3" style>
+        <div class="row">
+          <div class="col-auto">
+            <img style="height:700px;" src="https://img.alicdn.com/tfs/TB1x3SBu8r0gK0jSZFnXXbRRXXa-2400-1120.jpg" class="card-img" alt="...">
+          </div>
+          <div class="card-img-overlay col-auto" style="width:600px;height:600px;">
+            <div class="card text-center" style="width:100%;height:100%;">
+                <div class="card-header  bg-white">
+                  <ul class="nav  nav-tabs card-header-tabs bg-white justify-content-between  no-gutters">
+                    <li class="nav-item col-6">
+                      <a class="nav-link nav-link-action active" data-toggle="list" href="#tab-pane-1"><i class="iconfont iconzhifubao"></i>支付宝快捷登录</a>
+                    </li>
+                    <li class="nav-item col-6">
+                      <a class="nav-link nav-link-action" data-toggle="list" href="#tab-pane-2"><i class="iconfont icongerentouxiang"></i>账号密码登录</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body p-0">
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="tab-pane-1">
+                        <p>手机支付宝扫码后点击“确认授权”，</p>
+                        <p>即可完成账号绑定及登录</p>
+                        <img src="https://m.aliyun.com/common/creatQrCode?url=https%3A%2F%2Faccount.aliyun.com%2Flogin%2Fthird_party_bind_login.htm%3Fyst%3D7Z2zCGATUlGePdajY8N5F9f4r6KhMSdn%26oauth_callback%3Dhttps%253A%252F%252Faccount.aliyun.com%252Flogin%252Fconfirm_qr_login.htm%253Fyst%253D7Z2zCGATUlGePdajY8N5F9f4r6KhMSdn%2526oauth_callback%253Dhttps%25253A%25252F%25252Fwww.aliyun.com%25253Fspm%25253D5176.12901015.0.i12901015.53f0525cVLRJJv%26type%3Dalipay%26isMobile%3Dtrue%26isTracing%3Dtrue&size=190" alt=""><br>
+                        <a href="#" class="btn text-primary">免费注册</a>
+                        <div class="dropdown-divider"></div>
+                       <div>
+                        <span>其他登录方式</span>
+                        <i class="iconfont icontaobao"></i>
+                        <i class="iconfont iconzhifubao"></i>
+                        <i class="iconfont iconweibo-copy"></i>
+                        <i class="iconfont icondingding"></i>
+                        <i class="iconfont iconweibo-copy"></i>
+                       </div>
+                    
+                    </div>
+                    <div class="tab-pane fade active" id="tab-pane-2">
+                        <div class="body m-auto" style="width:330px">
+                                    <div class="text-left " style="font-size:18px;">密码登录</div>
+                                    <div class="form-group  align-self-center pad">
+                                        <input class="form-control   required" type="text" placeholder="邮箱/会员名/8位ID" id="loginName" name="username" autofocus="autofocus" maxlength="20"/>
+                                    </div>
+                                    <div class="form-group pad">
+                                            <input class="form-control  required" type="password" placeholder="请输入密码" id="password" name="password" maxlength="8"/>	                            
+                                    </div>
+                                        <button type="reset" class="btn text-white " style="width: 100%;" >登录</button>
+                                  <div class="text-right mt-2"><a href="" class="mr-3">忘记密码</a><a href="" class="mr-3">忘记会员名</a><a href="">免费注册</a></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
