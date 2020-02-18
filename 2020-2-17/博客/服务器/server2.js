@@ -19,6 +19,7 @@ http.createServer((req, res) => {
     console.log(urlPathName)
     if(extname==".png"){
         mime="image/png"
+        base+="images"
     }else if(extname==".js"){
         mime="text/javascript"
     }else if(extname==".css"){
