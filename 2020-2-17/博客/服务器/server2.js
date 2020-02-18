@@ -24,11 +24,8 @@ http.createServer((req, res) => {
     }else if(extname==".css"){
         mime="text/css"
     }
-
-    // 动态路由
     res.writeHead(200, { 'Content-Type': mime })
     fs.readFile(base+urlPathName, (err, data) => {
-        // 读取文件失败操作
         if (err) {
             console.log(`读取页面失败：${err.message}`)
             return
@@ -36,8 +33,6 @@ http.createServer((req, res) => {
 
         res.end(data)
     })
-
-    
 }).listen(3003, '127.0.0.1', () => {
     console.log('请访问：http://127.0.0.1:3003')
 })
