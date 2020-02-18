@@ -56,22 +56,7 @@ http.createServer((req, res) => {
                 res.end(data)
             })
         }
-    } else {
-        fs.readFile('./html/404.html', (err, data) => {
-            if (err) {
-                console.log(err.message)
-                return
-            }
-            res.writeHead(404, { 'Content-Type': 'text/html;charset=utf-8' })
-            res.end(data)
-        })
     }
-
-
-
-
-    
-
 }).listen(3002, '127.0.0.1', () => {
     console.log('请访问：http://127.0.0.1:3002')
 })
