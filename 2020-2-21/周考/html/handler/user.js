@@ -1,16 +1,31 @@
-const db=require('./db')
+
+const mysql = require('mysql')
 
 let show_login = (req,res)=>{
     res.render('login')
 }
 
 let do_login = (req,res)=>{
-    if(req.body.username == 'admin' && req.body.password == '111') {
-        res.render('index')
-    }else{
-        res.render('login')
+  //数据库
+const connection=mysql.createConnection({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'ok',
+    database: 'user'
+
+})
+let sql = 'SELECT count(1) FROM `user`  WHERE `username` = ? and `password` = ?' 
+connection.query(sql,[req.body.username,req.body.password],(err,results)=>{
+    if(err){
+        console.log(err.message)
+        return
     }
-   
+      if(results=1){
+        res.render('index')
+      }else{
+        res.render('login')
+      }
+    })
 }
 
 exports.show_login = show_login
