@@ -21,6 +21,6 @@ app.get('/index.html',(req,res)=>{res.sendFile(`${__dirname}/index.html`)})
 // 登录页
 app.get('/login.html',user.show_login).post('/login.html',user.do_login)
 
-app.listen(3000, '127.0.0.1', () => {
-    console.log('服务运行在：http://127.0.0.1:3000')
+app.listen(3001, '127.0.0.1', () => {
+    console.log('服务运行在：http://127.0.0.1:3001')
 })
