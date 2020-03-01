@@ -93,29 +93,13 @@
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
           
              <div class="card-columns">
-              <% for(var i=1;i<=str.length;i++){ %>
-                <% if(i%2!=0){%>
-                    <div class="card">
-                        <div class="card-body pb-0 d-flex flex-column justify-content-center" style="position: relative;">
-                          <span class="align-self-center">民乐那点事儿</span>
-                          <h5 class="card-title align-self-center"><%=str[i].title %></h5>
-                          <span class="align-self-center"><%=str[i].creation %></span>
-                          <p class="card-text " style="text-indent: 2em;"><%=str[i].content %></p>
-                          <button type="button">阅读全文</button>
-                          <ul class="d-flex justify-content-between mb-1 mt-3">
-                              <li><i class="iconfont icon-xingzhuang60kaobei2 pr-1"></i>收藏</li>
-                              <li><i class="iconfont icon-xinxi pr-1"></i>123</li>
-                              <li><i class="iconfont icon-share pr-1"></i>456</li>
-                              <li><i class="iconfont icon-xin pr-1"></i>756</li>
-                          </ul>
-                        </div>
-                      </div>
-                  <% }else if(i%2==0){ %>
+              <% for(var i=0;i<str.length;i++){ %>
+                <% if(i==1){ %>
                   <div class="card">
-                    <img src="./images/list'+i+'.png" class="card-img-top" alt="...">
+                    <img src="./images/list1.jpg" class="card-img-top" alt="...">
                     <div class="card-body pb-0 d-flex flex-column justify-content-center">
                         <span class="align-self-center">民乐那点事儿</span>
-                        <h5 class="card-title align-self-center"><%=str[i].title %></h5>
+                        <h5 class="card-title align-self-center"><%= str[i].title %></h5>
                         <span class="align-self-center"><%=str[i].creation %></span>
                         <button type="button">阅读全文</button>
                         <ul class="d-flex justify-content-between mb-1 mt-3">
@@ -126,25 +110,89 @@
                         </ul>
                       </div>
                   </div>
-                  <% } %>
-                <% } %>
-
-                      <div class="card  text-dark">
-                        <img src="./images/list4.jpg" class="card-img" alt="..." style="height:250px;">
-                        <div class="card-img-overlay pb-0 d-flex flex-column justify-content-center">
-                            <span class="align-self-center">民乐那点事儿</span>
-                            <h5 class="card-title align-self-center">渔樵问答</h5>
-                            <span class="align-self-center">2020-2-11</span>
-                            <p class="align-self-center" style="text-indent:2em;">“渔夫”和“樵夫”看似是山水闲人，实际上是隐逸者的象征。</p>
-                            <button type="button">阅读全文</button>
-                            <ul class="d-flex justify-content-between mb-0 mt-3">
-                                <li><i class="iconfont icon-xingzhuang60kaobei2 pr-1"></i>收藏</li>
-                                <li><i class="iconfont icon-xinxi pr-1"></i>123</li>
-                                <li><i class="iconfont icon-share pr-1"></i>456</li>
-                                <li><i class="iconfont icon-xin pr-1"></i>756</li>
-                            </ul>
+                  <% }else if(i==7){ %>
+                    <div class="card">
+                      <img src="./images/list3.png" class="card-img-top" alt="...">
+                      <div class="card-body pb-0 d-flex flex-column justify-content-center">
+                          <span class="align-self-center">民乐那点事儿</span>
+                          <h5 class="card-title align-self-center"><%= str[i].title %></h5>
+                          <span class="align-self-center"><%=str[i].creation %></span>
+                          <button type="button">阅读全文</button>
+                          <ul class="d-flex justify-content-between mb-1 mt-3">
+                              <li><i class="iconfont icon-xingzhuang60kaobei2 pr-1"></i>收藏</li>
+                              <li><i class="iconfont icon-xinxi pr-1"></i>123</li>
+                              <li><i class="iconfont icon-share pr-1"></i>456</li>
+                              <li><i class="iconfont icon-xin pr-1"></i>756</li>
+                          </ul>
+                        </div>
+                    </div>
+                  <% }else if(i==6){ %>
+                    <div class="card  text-dark">
+                      <img src="./images/list4.jpg" class="card-img" alt="..." style="height:250px;">
+                      <div class="card-img-overlay pb-0 d-flex flex-column justify-content-center">
+                        <span class="align-self-center">民乐那点事儿</span>
+                        <h5 class="card-title align-self-center"><%= str[i].title %></h5>
+                        <span class="align-self-center"><%=str[i].creation %></span>
+                        <p class="align-self-center" style="text-indent:2em;"><%=str[i].content %></p>
+                        <button type="button">阅读全文</button>
+                        <ul class="d-flex justify-content-between mb-1 mt-3">
+                            <li><i class="iconfont icon-xingzhuang60kaobei2 pr-1"></i>收藏</li>
+                            <li><i class="iconfont icon-xinxi pr-1"></i>123</li>
+                            <li><i class="iconfont icon-share pr-1"></i>456</li>
+                            <li><i class="iconfont icon-xin pr-1"></i>756</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <% }else if(i==5){ %>
+                      <div class="card">
+                        <img src="./images/zhiyin.jpg" class="card-img-top" alt="...">
+                        <div class="card-body pb-0 d-flex flex-column justify-content-center">
+                          <span class="align-self-center">民乐那点事儿</span>
+                          <h5 class="card-title align-self-center"><%= str[i].title %></h5>
+                          <span class="align-self-center"><%=str[i].creation %></span>
+                          <button type="button">阅读全文</button>
+                          <ul class="d-flex justify-content-between mb-1 mt-3">
+                              <li><i class="iconfont icon-xingzhuang60kaobei2 pr-1"></i>收藏</li>
+                              <li><i class="iconfont icon-xinxi pr-1"></i>123</li>
+                              <li><i class="iconfont icon-share pr-1"></i>456</li>
+                              <li><i class="iconfont icon-xin pr-1"></i>756</li>
+                          </ul>
                         </div>
                       </div>
+                  <% }else if(i==3){ %>
+                    <div class="card">
+                      <img src="./images/list2.jpg" class="card-img-top" alt="...">
+                      <div class="card-body pb-0 d-flex flex-column justify-content-center">
+                        <span class="align-self-center">民乐那点事儿</span>
+                        <h5 class="card-title align-self-center"><%= str[i].title %></h5>
+                        <span class="align-self-center"><%=str[i].creation %></span>
+                        <button type="button">阅读全文</button>
+                        <ul class="d-flex justify-content-between mb-1 mt-3">
+                            <li><i class="iconfont icon-xingzhuang60kaobei2 pr-1"></i>收藏</li>
+                            <li><i class="iconfont icon-xinxi pr-1"></i>123</li>
+                            <li><i class="iconfont icon-share pr-1"></i>456</li>
+                            <li><i class="iconfont icon-xin pr-1"></i>756</li>
+                        </ul>
+                      </div>
+                    </div>
+                  <% }else{ %>
+                    <div class="card">
+                      <div class="card-body pb-0 d-flex flex-column justify-content-center" style="position: relative;">
+                        <span class="align-self-center">民乐那点事儿</span>
+                        <h5 class="card-title align-self-center"><%=str[i].title %></h5>
+                        <span class="align-self-center"><%=str[i].creation %></span>
+                        <p class="card-text " style="text-indent: 2em;"><%=str[i].content %></p>
+                        <button type="button">阅读全文</button>
+                        <ul class="d-flex justify-content-between mb-1 mt-3">
+                            <li><i class="iconfont icon-xingzhuang60kaobei2 pr-1"></i>收藏</li>
+                            <li><i class="iconfont icon-xinxi pr-1"></i>123</li>
+                            <li><i class="iconfont icon-share pr-1"></i>456</li>
+                            <li><i class="iconfont icon-xin pr-1"></i>756</li>
+                        </ul>
+                      </div>
+                    </div>
+                  <% } %>
+                <% } %>
                       <div class="card text-white" style="height:400px;">
                         <img src="./images/hu.webp" class="" alt="..." style="width:100%;height:100%; ">
                         <div class="card-img-overlay d-flex flex-column justify-content-center" >
@@ -204,7 +252,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-3 pb-3">
                         <div class="card">
-                            <img src="./images/list1.png" class="card-img-top" alt="...">
+                            <img src="./images/list1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">古画</h5>
                               <ul class="d-flex justify-content-between mb-1 mt-3">

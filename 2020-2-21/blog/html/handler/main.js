@@ -8,16 +8,15 @@ exports.get_list = (req,res,next)=>{
         database: 'user'
     
     })
-    let sql = 'SELECT 	id, title, content, creation FROM article ' 
+    let sql = 'SELECT id, title, content, creation FROM article ' 
     var str=""
     connection.query(sql,(err,results)=>{
     if(err){
         console.log(err.message)
         return
     }
-    // str=JSON.stringify(results)
-    res.render('index',{str:results})
-   
+    console.log(results)
+     res.render('index',{str:results})
     })
     // next()
 }
