@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    *{padding:0;margin:0;}
+    ul,li{list-style: none;}
+    .body{width:350px; border: 1px solid #ccc;margin-left:400px;margin-top:50px;}
+    .body ul li{padding:10px;border-bottom:1px solid #ccc;}
+    .tian{padding:10px;}
+    .tian input{width:40%;}
+    </style>
+    <body>
+        <div class="body" id="dd">
+            <div><h3 class="bg-dark text-white text-center w-100 p-2">待办事项</h3></div>
+            <ul>
+                <li v-for="item,index in items" :key="item.id">
+                    <input type="checkbox" name="" :id="`item${item.id}`" :checked="item.state?'checked':''">
+                    <span class="mr-5">{{item.id}}-{{item.name}}</span>
+                    <button v-if="!item.state" type="button" class="btn btn-success ml-3"  @click="end(index)">完成</button>
+                    <button type="button" class="btn btn-danger ml-3" @click="del(index)">删除</button>
+                </li>
+            </ul>
+            <div class="tian d-flex">
+                <input v-model="id" type="text" placeholder="编号" class="d-inline">
+                <input v-model="name" type="text" placeholder="待办事件" class="d-inline">
+                <button type="button" class="btn btn-primary" class="d-inline" @click="insert()">添加</button>
+            </div>
+        </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var list=[{id:'1',name:'待办事件1',state: false},{id:'2',name:'待办事件2',state: false},{id:'3',name:'待办事件3',state: false}]
+        var vm=new Vue({
+            el:'#dd',
+            data:{
+                items:list,
+                isend:false,
+                id:'',
+                name:''
+            },
+            methods: {
+                insert(){
+                    list.push({id:this.id,name:this.name,state: false}),
+                    this.id='',
+                    this.name=''
+                },
+                del(index){
+                    this.items.splice(index, 1)
+                },
+                end(index){
+                    this.items[index].state = true
+                }
+            },
+        })
+    </script>
+</body>
+</html>
