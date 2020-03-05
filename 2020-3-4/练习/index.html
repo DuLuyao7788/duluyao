@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="vm">
+        <h1>{{message}}</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#vm",
+            data:{
+                message:'Hello VUE.js'
+            },
+            beforeCreate:function(){
+             console.log('正在初始化')   
+            },
+            created:function(){
+             console.log('创建完成')   
+            },
+            beforeMount:function(){
+             console.log('正在进行挂载')   
+            },
+            mounted:function(){
+             console.log('挂载完成')   
+            },
+            beforeUpdate:function(){
+             console.log('正在更新数据')   
+            },
+            updated:function(){
+             console.log('更新数据完成')   
+            }
+        })
+    </script>
+</body>
+</html>
