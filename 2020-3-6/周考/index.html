@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+      #editor{height:100px;}
+      ul,li{list-style: none;}
+  </style>
+  <body>
+<div id="app" class="ml-5 mr-5">
+    <div class="card border-0 m-3">
+        <div class="card-header bg-white">
+            <h3 class="card-title">文章添加</h3>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-row">
+                    <label for="title" class="col-2 text-center col-form-label">标题：</label>
+                    <input type="text" class="col-8 form-control" v-model="title" required>
+                </div>
+                <div class="form-row mt-3">
+                    <label for="category_id" class="col-2 text-center col-form-label">类目：</label>
+                    <select v-model="type" name="category_id" id="category_id" class="col-8 form-control">
+                        <option value="类目" selected >默认</option>
+                        <option value="1">类目一</option>
+                        <option value="2">类目二</option>
+                        <option value="3">类目三</option>
+                    </select> 
+                </div>
+                <div class="form-row mt-3">
+                    <label for="ue_content" class="col-2 text-center col-form-label">内容：</label>
+                    <div class="col-8 p-0">
+                        <textarea id="editor" v-model="content" name="content" class="w-100"></textarea>
+                    </div>           
+                </div>
+                <div class="form-row mt-3">
+                    <label for="content" class="col-2 text-center col-form-label">热门：</label>
+                    <div class="col-8 col-form-label">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="hot" name='hot'
+                                value='1' v-model="hot">
+                            <label class="custom-control-label" for="hot"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="offset-2">
+                        <input type="button" value="提交" class="btn btn-primary" @click="add">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card border-0 m-3">
+        <div class="card-header bg-white">
+            <h3 class="card-title">文章列表</h3>
+        </div>
+        <div class="card-body">
+          <ul v-for="item,index in items">
+              <li v-if="item.hot==1">
+                  <div style="background-color:red;">
+                  <span>[热门]</span>
+                  <span>[{{item.type}}]</span>
+                  <span>{{item.title}}</span>
+                  <span>{{item.content}}</span>
+                  </div>
+              </li>
+              <li   v-else>
+                <div>
+                <span>[{{item.type}}]</span>
+                <span>{{item.title}}</span>
+                <span>{{item.content}}</span>
+                </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var list=[{title:'标题1',type:'类目',content:'dfgbuhnijxxrdctfvygbuh',hot: 1},{title:'标题2',type:'类目',content:'dfgbuhnijxxrdctfvygbuh',hot: 0},{title:'标题3',type:'类目',content:'dfgbuhnijxxrdctfvygbuh',hot: 1}]
+        let vm=new Vue({
+            el:'#app',
+            data:{
+                items:list,
+                type:'类目',
+                title:'',
+                content:''
+            },
+            methods: {
+            add(){
+               list.push({title:this.title,type:this.type,content:this.content,hot:this.hot})
+               this.title='',
+               this.content='',
+               this.type='类目'
+               
+            }
+        },
+})
+    </script>
+</body>
+</html>
