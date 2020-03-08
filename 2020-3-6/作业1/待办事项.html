@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container pt-5">
+            <div class="card">
+                <div class="card-header bg-dark text-white text-center">
+                    <h3 class="card-title">待办事项</h3>
+                </div>
+                <div class="card-body">
+                         <list-show></list-show>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="编号" v-model="item.id">
+                        <input type="text" class="form-control" placeholder="待办事项" v-model="item.title">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" @click="add">添加</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var list={ id: '', title: '', state: false }
+        var lists= [
+                    { id: 1, title: '待办事项1', state: false },
+                    { id: 2, title: '待办事项2', state: true },
+                    { id: 3, title: '待办事项3', state: false },
+                ]
+         Vue.component('listShow', {
+            data: function () {
+                return {
+                item:list,
+                items:lists
+                }
+            },
+            template: 
+            '<ul class="list-gruop list-group-flush px-0 m-0" >'+
+                    '<li class="list-group-item d-flex pl-5" v-for="item,index in items" :key="item.id">'+
+                      '<div class="custom-checkbox">'+
+                                '<input type="checkbox" class="custom-control-input" :id="`item${item.id}`":checked="item.state?\'checked\':\'\'" disabled>'+
+                                '<label class="custom-control-label" :for="`item${item.id}`"></label>'+
+                     '</div>'+'<span class="mr-auto">{{ index+1 }}-{{ item.title }}</span>'+
+                     '<button class="btn btn-success btn-sm mr-1" v-if="!item.state" @click="item.state=true">完成</button>'+
+                     '<button class="btn btn-danger btn-sm" @click="this.items.splice(index,1)">删除</button>'+
+                     '</li>'+
+            '</ul>'
+        })
+        let app = new Vue({
+            el: "#app",
+            data: {
+                item:list,
+                items:lists
+            },
+            methods: {
+                add() {
+                    let { id, title, state } = this.item
+                    lists.push({ id: id, title: title, state: false })
+                    list = {}
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
