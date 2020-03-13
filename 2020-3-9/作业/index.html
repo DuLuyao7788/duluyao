@@ -11,47 +11,14 @@
   </head>
   <body>
     <div id="vm">
-        <div class="container d-flex justify-content-center align-items-center pb-5">
-            <!-- 登录 -->
-            <template v-if="userState==0">
-                <card>
-                    <template v-slot:header>
-                       <h3>欢迎登录</h3>
-                    </template>
-                    <card-form submit-button-text="登录" @submit="login" key="login"></card-form>
-                    <template v-slot:footer>
-                        <button class="btn btn-link text-secondary"
-                         @click="setUserState(-1)">如果您没有注册账户，请点击此处注册</button>
-                    </template>
-                </card>
-            </template>
-            <!-- 注册 -->
-            <template v-else-if="userState==-1">
-                <card>
-                    <template v-slot:header>
-                       <h3>欢迎注册</h3>
-                    </template>
-                    <card-form submit-button-text="注册" @submit="regist" key="regist"></card-form>
-                    <template v-slot:footer>
-                        <button class="btn btn-link text-secondary"
-                         @click="setUserState(0)">如果您已有注册账户，请点击此处登录</button>
-                    </template>
-                </card>
-            </template>
-            <!-- 欢迎页面 -->
-            <template v-else>
-                <div>
-                    <h1 class="mb-4">您好，{{user.username}}</h1>
-                    <div class="text-center border-top">
-                        <button class="btn btn-link text-secondary" @click="setUserState(0)">点击此处退出</button>
-                    </div>
-                </div>
-            </template>
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+            <router-view></router-view>
         </div>
     </div>
     <template id="formGroupInput">
         <div class="from-group">
-            <input type="text" class="form-control" :placeholder="placeholder" :value="username"
+            <input type="text" class="form-control mb-3" :placeholder="placeholder" 
+               :value="username"
                @input="$emit('input',$event.target.value)">
         </div>
     </template>
@@ -60,12 +27,12 @@
             <input :type="type" class="form-control"
                 :placeholder="placeholder" :value="password" @input="$emit('input',$event.target.value)">
                 <div class="input-group-append">
-                    <button type="button" class="btn btn-primary" @click="isShowPassword!=isShowPassword">{{passwordButtonText}}</button>
+                    <button type="button" class="btn btn-primary  mb-3" @click="isShowPassword!=isShowPassword">{{passwordButtonText}}</button>
                 </div>
         </div>
     </template>
     <template id="formGroupSubmit">
-        <button tyoe="button" class="btn btn-primary form-control" :disabled="disabled"
+        <button type="button" class="btn btn-primary form-control" :disabled="disabled"
         @click="$emit('click')">
         {{btnText}}
         </button>
@@ -85,18 +52,51 @@
     </template>
     <template id="cardForm">
         <form>
-            <form-group-input placeholder="请输入用户名" :key="`${key}Text`" v-model="username"></form-group-input>
-            <form-group-password placeholder="请输入密码" :key="`${key}password`" v-model="password"></form-group-password>
+            <form-group-input placeholder="请输入用户名" :key="`${keyword}Text`" v-model="username"></form-group-input>
+            <form-group-password placeholder="请输入密码" :key="`${keyword}password`" v-model="password"></form-group-password>
             <form-group-submit :disabled="isDisabledSubmit" :btn-text="submitButtonText" @click="$emit('submit',username,password)"></form-group-submit>
         </form>
     </template>
+    <template id="registPage">
+        <card>
+            <template v-slot:header>
+               <h3>欢迎注册</h3>
+            </template>
+            <card-form submit-button-text="注册" @submit="regist" keyword="regist"></card-form>
+            <template v-slot:footer>
+                <router-link to="/login" class="btn btn-link text-secondary">如果您已注册账户，请点击此处登录</router-link>
+            </template>
+        </card>
+    </template>
+    <template id="loginPage">
+        <card>
+            <template v-slot:header>
+               <h3>欢迎登录</h3>
+            </template>
+            <card-form submit-button-text="登录" @submit="login" keyword="login"></card-form>
+            <template v-slot:footer>
+                 <router-link to="/regist" class="btn btn-link text-secondary">如果您没有注册账户，请点击此处注册</router-link>
+            </template>
+        </card>
+    </template>
+    <template id="indexPage">
+        <div>
+            <h1 class="mb-4">您好，{{user.username}}</h1>
+            <div class="text-center border-top">
+                <router-link to="/login" class="btn btn-link text-secondary">点击此处退出</router-link>
+            </div>
+        </div>
+    </template>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script>
+        const user={ username: '111', password: '111' }
       Vue.component('formGroupInput',{
           model:{
               prop:"username",
@@ -154,12 +154,13 @@
       Vue.component('card',{
           template:"#card"
       })
-      const cardFrom={
+      
+      const cardForm={
           props:{
               submitButtonText:{
                   default:'提交'
               },
-              key:{
+              keyword:{
                   default:''
               }
           },
@@ -176,33 +177,57 @@
           },
           template:"#cardForm"
       }
-          let vm = new Vue({
-            components:{
-                'cardForm':cardFrom
+      const registPage={
+        components:{
+               
+                'cardForm':cardForm
             },
+          template:"#registPage"
+      }
+      const  loginPage={
+       components:{
+     
+        'cardForm':cardForm
+        },
+        template:"#loginPage"
+      }
+      const  indexPage={
+        data:function(){
+            return{
+                user:user
+            }
+        },
+        components:{
+                'cardForm':cardForm
+            },
+          template:"#indexPage"
+      }
+      const router=new VueRouter({
+        routes:[
+              { path: '/regist',component:registPage},
+              { path: '/login',component:loginPage},
+              { path: '/index',component:indexPage}
+              ]
+      })  
+          let vm = new Vue({
+            router,
             el: '#vm',
             data: {
-                userState: -1,  
-                user: { username: '', password: '' },
+              
             },
             methods: {
-                // 更换状态
-                setUserState(state) {
-                    this.userState = state
-                },
                 // 注册 
                 regist() {
                     // 赋值
                     this.user.username = this.username
                     this.user.password = this.password
                     alert('注册成功')
-                    this.setUserState(0)
+                    router.push({path:'/login'})
                 },
                 login() {
                     // 登录判断
                     if (this.user.username == this.username && this.user.password == this.password) {
-                        // 设置状态码
-                        this.setUserState(1)
+                        this.$router.push({path:'/index'})
                     } else {
                         alert('登录失败')
                     }

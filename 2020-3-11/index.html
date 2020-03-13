@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="vm">
+        <div class="container d-flex justify-content-center align-items-center pb-5">
+            <router-view></router-view>
+        </div>
+    </div>
+
+    <template id="card">
+        <div class="card border-0 mb-5">
+            <div class="card-header bg-white">
+                <slot name="header"></slot>
+            </div>
+            <div class="card-body">
+                <slot></slot>
+            </div>
+            <div class="card-footer bg-transparent text-center">
+                <slot name="footer"></slot>
+            </div>
+        </div>
+    </template>
+    <template id="formGroupInput">
+        <div class="from-group">
+            <input type="text" class="form-control" :placeholder="placeholder" :value="username"
+                @input="$emit('input',$event.target.value)">
+        </div>
+    </template>
+    <template id="formGroupPassword">
+        <div class="input-group">
+            <input :type="type" class="form-control"
+                :placeholder="placeholder" :value="password" @input="$emit('input',$event.target.value)">
+            <div class="input-group-append">
+                <button type="button" class="btn btn-primary" @click="isShowPassword!=isShowPassword">{{passwordButtonText}}</button>
+            </div>
+        </div>
+    </template>
+    <template id="submitButton">
+        <div class="form-group">
+            <input type="button" class="form-control btn btn-primary"
+                :disabled="disabled" @click="$emit('click')">
+        </div>
+    </template>
+    <template id="cardForm">
+      <form-group-input placeholder="请输入用户名" v-model="username" :key="`${keyword}username`"></form-group-input>
+      <form-group-password placeholder="请输入密码" v-model="username" :key="`${keyword}password`"></form-group-password>
+      <submit-button :text="btnText" :disabled="isDisabledSubmit" @click="$emit('click',username,password)"></submit-button>
+    </template>
+    <template id="registPage">
+        <card>
+            <template v-slot="header">
+               <h3>欢迎注册</h3>
+            </template>
+            <card-form btn-text="注册" @click="regist" keyword="regist"></card-form>
+            <template v-slot="footer">
+                <router-link to="/login" class="btn btn-link text-secondary">如果您已注册账户，请点击此处登录</router-link>
+             </template>
+        </card>
+    </template>
+    <template id="loginPage">
+        <card>
+            <template v-slot="header">
+               <h3>欢迎登录</h3>
+            </template>
+            <card-form btn-text="登录" @click="login" keyword="login"></card-form>
+            <template v-slot="footer">
+                <router-link to="/regist" class="btn btn-link text-secondary">如果您没有注册账户，请点击此处注册</router-link>
+             </template>
+        </card>
+    </template>
+    <template id="indexPage">
+        <div>
+            <h1 class="mb-4">您好，{{user.username}}</h1>
+            <div class="text-center border-top">
+                <router-link to="/login" class="btn btn-link text-secondary" >点击此处退出</router-link>
+            </div>
+        </div>
+    </template>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script>
+         const user={ username: '', password: '' }
+        Vue.component('formGroupInput',{
+            model:{
+                prop:'username',
+                event:''
+            },
+            props:{
+                username:{
+                    default:''
+                },
+                placeholder:{
+                    default:''
+                }
+            },
+            template:"#formGroupInput"
+        })
+        Vue.component('formGroupPassword',{
+            model:{
+                prop:'password',
+                event:''
+            },
+            props:{
+                password:{
+                    default:''
+                },
+                placeholder:{
+                    default:''
+                }
+            },
+            data:function(){
+                return{
+                    isShowPassword:false
+                }
+            },
+            computed: {
+                passwordButtonText:function(){
+                    return this.isShowPassword ? '隐藏' : '显示'
+                },
+                type:function(){
+                    return this.isShowPassword ? 'text' : 'password'
+                }
+            },
+            template:"#formGroupPassword"
+        })
+        Vue.component('submitButton',{
+            props:{
+                disabled:{
+                    default:flase
+                },
+                text:{
+                    default:''
+                }
+            },
+            template:"#submit"
+        })
+        const cardForm={
+            template:"#cardForm",
+            props:{
+                btnText:{
+                    default:''
+                },
+                keyword:{
+                    default:''
+                }
+            },
+            data:function(){
+                return{
+                    username:'',
+                    password:''
+                }
+            },
+            computed:{
+                isDisabledSubmit:function(){
+                    return this.username.trim().length == 0 || this.password.trim().length == 0
+                }
+            }
+        }
+        // 注册页面
+        const registPage={
+            components:{
+                'cardForm':cardForm
+            },
+            methods:{
+                regist() {
+                    // 赋值
+                    this.user.username = this.username
+                    this.user.password = this.password
+                    alert('注册成功')
+                    router.push({path:'/login'})
+                },
+            },
+            template:"#registPage"
+        }
+        // 登录页面
+        const loginPage={
+            template:"#loginPage",
+            methods: {
+                login() {
+                    // 登录判断
+                    if (this.user.username == this.username && this.user.password == this.password) {
+                        // 设置状态码
+                        router.push({path:'/index'})
+                    } else {
+                        alert('登录失败')
+                    }
+                }
+            },
+            components:{
+                'cardForm':cardForm
+            }
+        }
+        // 登录后页面
+        const indexPage={
+            template:"#indexPage",
+            components:{
+                'cardForm':cardForm
+            }
+        }
+        // 路由
+        const router = new VueRouter({
+            routes:[
+                {path:'/regist',component:registPage},
+                {path:'/login',component:loginPage},
+                {path:'/index',component:indexPage}
+            ]
+        })
+        let vm = new Vue({
+            router,
+            el: '#vm',
+            data: {
+               
+            },
+            methods: {
+       
+               
+              
+              
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="vm">
+        <div class="container d-flex justify-content-center align-items-center pb-5">
+           <template v-if="userState==0">
+            <div class="card border-0 mb-5">
+                <div class="card-header bg-white">
+                    <h3>欢迎登录</h3>
+                </div>
+                <div class="card-body">
+                    <form class="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="请输入用户名">
+                        </div>
+                        <div class="form-group mt-4" >
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="请输入密码">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-primary"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <input type="button" value="登录" class="form-control btn btn-primary">
+                </div>
+                <div class="card-footer bg-transparent text-center">
+                    <button class="btn btn-link text-secondary">如果您还没有注册账号,请先注册</button>
+                </div>
+            </div>
+           </template>
+           <template v-else-if="userState==1">
+            <div class="card border-0 mb-5">
+                <div class="card-header bg-white">
+                    <h3>欢迎注册</h3>
+                </div>
+                <div class="card-body">
+                    <form class="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="请输入用户名">
+                        </div>
+                        <div class="form-group mt-4" >
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="请输入密码">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-primary"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <input type="button" value="注册" class="form-control btn btn-primary">
+                </div>
+                <div class="card-footer bg-transparent text-center">
+                    <button class="btn btn-link text-secondary">如果您还已有注册账号,请先登录</button>
+                </div>
+            </div>
+           </template>
+       <template v-else>
+          <div>
+              <h1>欢迎，{{username}}</h1>
+              <div class="text-center">
+                <button class="btn btn-link text-secondary">退出</button>
+              </div>
+          </div>
+       </template>
+
+        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+          let vm = new Vue({
+            el: '#vm',
+            data: {
+                userState: -1,  
+                user: { username: '', password: '' },
+                username: '',
+                password: '',
+                isDisabledBtn: true,
+                isShowPassword: false,
+                passwordBtnText: '显示'
+            },
+            methods: {
+                init() {
+                    this.username = ''
+                    this.password = ''
+                    // 禁用注册 登录按钮
+                    this.isDisabledBtn = true
+                    // 密码不显示
+                    this.isShowPassword = false
+                    this.passwordBtnText = '显示'
+                },
+                // 更换状态
+                setState(state) {
+                    this.init()
+                    this.userState = state
+                },
+                enabledBtn() {
+                    // 判断是否输入密码和用户名 来管理注册登录按钮
+                    this.isDisabledBtn = this.username.trim().length == 0 || this.password.trim().length == 0
+                },
+                showPassword() {
+                    this.isShowPassword = !this.isShowPassword
+                    this.passwordBtnText = this.isShowPassword ? '隐藏' : '显示'
+                },
+                // 注册 
+                regist() {
+                    // 赋值
+                    this.user.username = this.username
+                    this.user.password = this.password
+                    alert('注册成功')
+                    this.setState(0)
+                },
+                login() {
+                    // 登录判断
+                    if (this.user.username == this.username && this.user.password == this.password) {
+                        // 设置状态码
+                        this.setState(1)
+                    } else {
+                        alert('登录失败')
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+</html>

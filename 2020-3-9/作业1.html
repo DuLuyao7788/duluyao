@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<my-btn></my-btn>
+		<my-count></my-count>
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+	var bus =  new Vue();
+	var myvue = new Vue({
+		el: "#app",
+		components: {
+			'my-btn': {
+				template: "<button @click='add'>点击</button>",
+				methods: {
+					add: function(){
+						bus.$emit("add",1);
+					}
+				}
+			},
+			'my-count': {
+				data: function(){
+					return {count: 0}
+				},
+				template: "<span>{{count}}</span>",
+				mounted: function(){
+					var self = this;
+					bus.$on("add",function(msg){
+						self.count += msg;
+					})
+				}
+			}
+		}
+	})
+</script>
+</html>
