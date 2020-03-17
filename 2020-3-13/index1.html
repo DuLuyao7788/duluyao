@@ -113,7 +113,7 @@
                 <form-group-select lable-text="类目：" :option="categories" v-model="article.category">
 
                 </form-group-select>
-                <form-group-switch lable-text="热门：" data-id="hot" v-model="article.hot"></form-group-switch>
+                <form-group-switch lable-text="热门：" data-id="hot" v-model="article.hot" @change="change"></form-group-switch>
                 <div class="form-group row">
                     <button type="button" class="btn btn-primary offset-3" @click="submit">提交</button>
                 </div>
@@ -275,6 +275,9 @@
                 }
             },
             methods:{
+                change(checked){
+                    this.article.hot=checked
+                },
                 submit(){
                     if(this.$route.params.id===undefined){
                         articles.push(this.article)
