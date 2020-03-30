@@ -30,7 +30,11 @@
             </div>
         </div>
     </div>
-
+<template>
+    <div>
+        
+    </div>
+</template>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         var list={ id: '', title: '', state: false }
@@ -54,7 +58,7 @@
                                 '<label class="custom-control-label" :for="`item${item.id}`"></label>'+
                      '</div>'+'<span class="mr-auto">{{ index+1 }}-{{ item.title }}</span>'+
                      '<button class="btn btn-success btn-sm mr-1" v-if="!item.state" @click="item.state=true">完成</button>'+
-                     '<button class="btn btn-danger btn-sm" @click="this.items.splice(index,1)">删除</button>'+
+                     '<button class="btn btn-danger btn-sm" @delete="this.items.splice(index,1)">删除</button>'+
                      '</li>'+
             '</ul>'
         })
