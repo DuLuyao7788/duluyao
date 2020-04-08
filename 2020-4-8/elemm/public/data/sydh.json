@@ -1,0 +1,12 @@
+[
+    { "id": 1, "title": "美食", "img": "/images/index/meishi.jpeg" },
+    { "id": 2, "title": "夜市", "img": "/images/index/yeshi.jpeg" },
+    { "id": 3, "title": "跑腿代购", "img": "/images/index/paotuidaigou.jpeg" },
+    { "id": 4, "title": "汉堡披萨", "img": "/images/index/hanbaopisa.jpeg" },
+    { "id": 5, "title": "甜品饮品", "img": "/images/index/tianpinyinpin.jpeg" },
+    { "id": 6, "title": "素食简餐", "img": "/images/index/sushijiancan.jpeg" },
+    { "id": 7, "title": "地方小吃", "img": "/images/index/difangxiaochi.jpeg" },
+    { "id": 8, "title": "米粉面馆", "img": "/images/index/mifenmianguan.jpeg" },
+    { "id": 9, "title": "包子粥店", "img": "/images/index/baozizhoudian.jpeg" },
+    { "id": 10, "title": "炸鸡炸串", "img": "/images/index/zhajizhachuan.jpeg" }
+]

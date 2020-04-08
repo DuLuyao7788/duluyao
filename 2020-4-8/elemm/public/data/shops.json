@@ -1,0 +1,582 @@
+[
+    {
+        "img": "/images/shop/1.png",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 4.8,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            },
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/2.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 3,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/3.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 4,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/4.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/5.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 3.5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/1.png",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 4.8,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            },
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/2.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 3,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/3.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 4,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/4.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/5.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 3.5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/1.png",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 4.8,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            },
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/2.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 3,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/3.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 4,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/4.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/5.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 3.5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/1.png",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 4.8,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            },
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/2.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 3,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/3.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": false,
+        "rate": 4,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/4.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    },
+    {
+        "img": "/images/shop/5.jpeg",
+        "title": "肯德基宅急送（泰山店）",
+        "isBrand": true,
+        "rate": 3.5,
+        "sales": 51,
+        "startPrice": 0,
+        "freight": 9,
+        "distance": "985m",
+        "innerTime": "30分钟",
+        "type": "汉堡薯条",
+        "promoteSale": [
+            {
+                "type": "xin",
+                "icon": "新",
+                "title": "饿了么新用户首单立减"
+            },
+            {
+                "type": "jian",
+                "icon": "减",
+                "title": "满30元减8元，满48元减20元"
+            },
+            {
+                "type": "pei",
+                "icon": "配",
+                "title": "配送费立减3元"
+            }
+        ]
+    }
+]
