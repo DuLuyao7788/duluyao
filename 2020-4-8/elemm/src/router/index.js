@@ -13,6 +13,16 @@ const routes = [
     path: '/my',
     name: 'My',
     component: ()=>import('../views/My.vue')
+  },
+  {
+    path: '/order',
+    name: 'Order',
+    component: ()=>import('../views/Order.vue')
+  },
+  {
+    path: '/find',
+    name: 'Find',
+    component: ()=>import('../views/Find.vue')
   }
 ]
 

@@ -13,6 +13,8 @@
       </el-header>
       <el-main>
         <shou-ye-dao-hang :sydh="sydh"></shou-ye-dao-hang>
+        <PinZhiTaoCan></PinZhiTaoCan>
+        <HomeSupper></HomeSupper>
         <divider text="推荐商家"></divider>
         <dian-pu-shai-xuan
           @clickTab="clickTab"
@@ -46,7 +48,8 @@ import ShouYeDaoHang from "@/components/home/ShouYeDaoHang";
 import Divider from "@/components/home/Divider";
 import DianPuShaiXuan from "@/components/home/DianPuShaiXuan";
 import DianPu from "@/components/home/DianPu";
-
+import PinZhiTaoCan from "../components/home/PinZhiTaoCan"
+import HomeSupper from "../components/home/HomeSupper"
 export default {
   name: "Home",
   components: {
@@ -56,7 +59,9 @@ export default {
     ShouYeDaoHang,
     Divider,
     DianPuShaiXuan,
-    DianPu
+    DianPu,
+    PinZhiTaoCan,
+    HomeSupper
   },
   data() {
     return {
