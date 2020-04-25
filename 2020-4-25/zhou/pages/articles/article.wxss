@@ -1,0 +1,41 @@
+.header{
+  width: 700rpx;
+  font-size: 50rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #ccc;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+.tou{
+  width: 650rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.todos{
+  padding: 0 20px;
+}
+.todo{
+  width: 700rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+.todo-del text{
+  text-decoration: line-through;
+}
+.del-button{
+  background-color: #e64340;
+  color: #fff;
+  padding: 4rpx 16rpx;
+  border-radius: 5rpx;
+}
+navigator{
+  width: 100%;
+  background-color:blue;
+  color: #ccc;
+  text-align: center;
+  padding: 10px 0;
+}

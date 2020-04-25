@@ -1,0 +1,15 @@
+.header{
+  width: 700rpx;
+  font-size: 50rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #ccc;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+.main{
+  width: 700rpx;
+}
+input{
+  margin: 20rpx 0;
+  padding: 0 20rpx;
+}
